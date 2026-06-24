@@ -33,3 +33,28 @@ sigma_delta_adc/
 │   └── generate_fir.py         
 ├── run_sim.py                  # Python-driven Make script
 └── README.md
+```
+## 📊 Performance Metrics
+
+* **Modulator Order:** 1st-Order
+* **Oversampling Ratio (OSR):** 64
+* **System Clock:** 3.072 MHz
+* **Output Sample Rate:** 48 kHz
+* **Target Signal:** 1.031 kHz Sine Wave (Coherent)
+* **Achieved SNDR:** 52.66 dB
+* **Effective Number of Bits (ENOB):** 8.45 Bits
+
+## 🚀 Working
+
+This verification environment uses `cocotb` to decouple the analog test vectors from the Verilog timing cycles, ensuring perfectly coherent DSP capture without simulator delta-cycle race conditions.
+
+### Prerequisites
+* **Python 3.8+**
+* **Icarus Verilog** (`iverilog` added to PATH)
+* Python packages: `pip install cocotb cocotb-test pytest numpy matplotlib scipy`
+
+### Running the Verification
+Simply run the top-level simulation script. This will compile the RTL, initialize the testbench, inject the analog stimulus, and calculate the final Coherent FFT.
+
+```bash
+python run_sim.py
