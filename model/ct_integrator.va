@@ -1,0 +1,19 @@
+`include "constants.vams"
+`include "disciplines.vams"
+
+module ct_integrator(vin, vout);
+    input vin;
+    output vout;
+    electrical vin, vout;
+
+    // Architectural Parameters
+    parameter real R = 10000.0;  // 10k Ohms
+    parameter real C = 10e-9;    // 10nF Capacitance
+
+    analog begin
+        // First-principles differential equation for an inverting integrator.
+        // Nodal analysis (KCL) at the output node: I_resistor + I_capacitor = 0
+        // The ddt() operator calculates the exact time derivative (dV/dt) and is fully supported.
+        I(vout) <+ (V(vin) / R) + (C * ddt(V(vout)));
+    end
+endmodule

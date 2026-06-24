@@ -1,0 +1,9 @@
+# Simulation Build Artifacts
+sim/build/
+*.vvp
+*.vcd
+results.xml
+
+# Python Cache
+__pycache__/
+*.pyc
