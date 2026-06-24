@@ -7,7 +7,7 @@
 A complete, closed-loop mixed-signal tape-out of a 1st-Order Sigma-Delta Analog-to-Digital Converter. This project bridges the gap between continuous-time analog behavior and discrete-time digital signal processing, featuring a mathematically verified SNR of **52.66 dB**.
 
 ![ADC Output Spectrum](adc_spectrum.png)
-*(Above: The final coherent FFT showing the noise-shaping curve and the isolated 1 kHz audio fundamental, achieved through Python-based automated testbench verification.)*
+*(The final coherent FFT showing the noise-shaping curve and the isolated 1 kHz audio fundamental, achieved through Python-based automated testbench verification.)*
 
 ## 📝 Architecture Overview
 
